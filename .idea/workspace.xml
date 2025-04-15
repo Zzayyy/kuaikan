@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/FastView-Backend/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="$USER_HOME$/software/dev/apache-maven-3.9.9" />
+        <option name="localRepository" value="$USER_HOME$/software/dev/apache-maven-3.9.9/repo" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="$USER_HOME$/software/dev/apache-maven-3.9.9/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2vXdWUJ9kO5lnfG9kSWQiw5Jb96" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CodeGenetatr.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserTest.findUserByUsername.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserTest.insetUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FastView [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.FastViewBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yws/IdeaProjects/code&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/yws/IdeaProjects/FastView/FastView-Backend/src/main/java/cn/kshost/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/backend" />
+      <recent name="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/user" />
+      <recent name="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.FastViewBackendApplication">
+    <configuration name="CodeGenetatr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.kshost.fastview.backend.CodeGenetatr" />
+      <module name="FastView-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.kshost.fastview.backend.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.findUserByUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FastView-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.kshost.fastview.backend.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.kshost.fastview.backend" />
+      <option name="MAIN_CLASS_NAME" value="cn.kshost.fastview.backend.UserTest" />
+      <option name="METHOD_NAME" value="findUserByUsername" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.insetUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FastView-Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.kshost.fastview.backend.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.kshost.fastview.backend" />
+      <option name="MAIN_CLASS_NAME" value="cn.kshost.fastview.backend.UserTest" />
+      <option name="METHOD_NAME" value="insetUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FastViewBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="FastView-Backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kshost.fastview.backend.FastViewBackendApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.kshost.fastview.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.FastViewBackendApplication" />
+        <item itemvalue="JUnit.UserTest.insetUserTest" />
+        <item itemvalue="Application.CodeGenetatr" />
+        <item itemvalue="JUnit.UserTest.findUserByUsername" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="" />
+      <created>1744107719664</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744107719664</updated>
+      <workItem from="1744107723335" duration="114000" />
+      <workItem from="1744295386499" duration="7907000" />
+      <workItem from="1744333152469" duration="5263000" />
+      <workItem from="1744338436305" duration="3150000" />
+      <workItem from="1744368204542" duration="19363000" />
+      <workItem from="1744435427191" duration="2026000" />
+      <workItem from="1744525916277" duration="152000" />
+      <workItem from="1744560663004" duration="75000" />
+      <workItem from="1744612158614" duration="2000" />
+      <workItem from="1744616707466" duration="10527000" />
+      <workItem from="1744685273606" duration="4877000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/kshost/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/UserServiceImpl.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
