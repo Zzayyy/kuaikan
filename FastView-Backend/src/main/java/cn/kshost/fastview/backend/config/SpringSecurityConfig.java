@@ -31,6 +31,9 @@ public class SpringSecurityConfig {
     @Autowired
     LoginAuthenticationEntryPoint loginAuthenticationEntryPoint;
 
+    @Autowired
+    LoginAuthenticationEntryPoint kk;
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
