@@ -41,7 +41,14 @@ public class SpringSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)  //关闭csrf防护
                 .sessionManagement(t -> t.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) //设置无状态会话，不使用session
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/user/login").permitAll()//放行指定路径
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/user/login").permitAll()//放行指定路径
+                        .requestMatchers("/doc.html").permitAll() // 放行 Swagger UI 的文档页面
+                        .requestMatchers("/swagger-ui/**").permitAll() // 放行 Swagger UI 的静态资源
+                        .requestMatchers("/webjars/**").permitAll() // 放行 Swagger 所需的 WebJars 资源
+                        .requestMatchers("/v3/api-docs").permitAll() // 放行 OpenAPI 文档路径
+                        .requestMatchers("/v3/api-docs/**").permitAll() // 放行 OpenAPI 文档的子路径
+
                         .anyRequest().authenticated()); //其它路径都需要认证
         //自定义token过滤器注册
         http.addFilterBefore(tokenParseFilter, UsernamePasswordAuthenticationFilter.class);
