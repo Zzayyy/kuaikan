@@ -1,8 +1,12 @@
 package cn.kshost.fastview.backend.service;
 
+import cn.kshost.fastview.backend.pojo.MenuItem;
 import cn.kshost.fastview.backend.pojo.User;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
+import cn.kshost.fastview.backend.security.LoginUserDetail;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -15,4 +19,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserService extends IService<User> {
 
     LoginUserVo login(User user);
+
+    List<MenuItem> getMenuItemList(LoginUserDetail loginUserDetail);
+
+    LoginUserVo refreshToken(String refreshToken,String accessToken);
 }

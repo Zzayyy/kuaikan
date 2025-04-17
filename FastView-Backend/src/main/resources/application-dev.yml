@@ -4,7 +4,7 @@ server:
 spring:
   data:
     redis:
-      host: 127.0.0.1
+      host: nwct.kshost.cn
       database: 0
       port: 6379
   application:

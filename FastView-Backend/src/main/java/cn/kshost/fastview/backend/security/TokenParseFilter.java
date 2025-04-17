@@ -1,6 +1,7 @@
 package cn.kshost.fastview.backend.security;
 
 import cn.hutool.json.JSONUtil;
+import cn.kshost.fastview.backend.util.FastViewContextUtil;
 import cn.kshost.fastview.backend.util.TokenUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -27,6 +28,8 @@ public class TokenParseFilter extends OncePerRequestFilter {
             String json = redisTemplate.opsForValue().get("user:login:accessToken:" + token);
             if (StringUtils.hasLength(json)) {
                 LoginUserDetail loginUserDetail = JSONUtil.toBean(json, LoginUserDetail.class);
+                //将数据存入上下文
+                FastViewContextUtil.setLoginUserDetail(loginUserDetail);
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginUserDetail, null, loginUserDetail.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }else{

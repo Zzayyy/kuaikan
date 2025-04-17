@@ -11,6 +11,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MenuItem {
+    private Long id;
     private String path;
     private String name;
     private Map<String, String> meta;

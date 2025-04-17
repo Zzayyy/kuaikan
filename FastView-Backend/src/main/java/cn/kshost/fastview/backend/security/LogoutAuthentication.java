@@ -1,7 +1,7 @@
 package cn.kshost.fastview.backend.security;
 
 import cn.hutool.json.JSONUtil;
-import cn.kshost.fastview.backend.util.Result;
+import cn.kshost.fastview.backend.pojo.result.Result;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

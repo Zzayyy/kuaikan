@@ -1,4 +1,4 @@
-package cn.kshost.fastview.backend.util;
+package cn.kshost.fastview.backend.pojo.result;
 
 import lombok.Data;
 

@@ -1,11 +1,16 @@
 package cn.kshost.fastview.backend.service.impl;
 
+import cn.kshost.fastview.backend.mapper.MenuMapper;
+import cn.kshost.fastview.backend.mapper.RoleMenuMapper;
 import cn.kshost.fastview.backend.mapper.UserMapper;
-import cn.kshost.fastview.backend.pojo.User;
+import cn.kshost.fastview.backend.mapper.UserRoleMapper;
+import cn.kshost.fastview.backend.pojo.*;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
 import cn.kshost.fastview.backend.security.LoginUserDetail;
 import cn.kshost.fastview.backend.service.IUserService;
+import cn.kshost.fastview.backend.util.MenuUtil;
 import com.alibaba.fastjson2.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,9 +20,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -29,10 +36,21 @@ import java.util.concurrent.TimeUnit;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+
+
+    @Autowired
+    private MenuMapper menuMapper;
     @Autowired
     private RedisTemplate<String,String> redisTemplate;
     @Autowired
     AuthenticationManager authenticationManager;
+    @Autowired
+    private UserRoleMapper userRoleMapper;
+    @Autowired
+    private RoleMenuServiceImpl roleMenuServiceImpl;
+    @Autowired
+    private RoleMenuMapper roleMenuMapper;
+
     @Override
     public LoginUserVo login(User user) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
@@ -50,8 +68,60 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                     .nickname(loginUserDetail.getUser().getNickName())
                     .expires(LocalDateTime.now().plusHours(1)).
                     build();
-
             return loginUserVo;
+        }
+        return null;
+    }
+
+    @Override
+    public List<MenuItem> getMenuItemList(LoginUserDetail loginUserDetail) {
+        Long userId = loginUserDetail.getUser().getId();
+        //获取该用户角色列表
+        List<UserRole> userRolesList = userRoleMapper.selectList(new LambdaQueryWrapper<UserRole>().eq(UserRole::getUserId, userId).eq(UserRole::getStatus,1).eq(UserRole::getIsDelete,0));
+        //组装角色id
+        List<Long> roleIdList = userRolesList.stream().map(UserRole::getRoleId).collect(Collectors.toList());
+        //获取该角色菜单列表
+        List<RoleMenu> roleMenuList = roleMenuMapper.selectList(new LambdaQueryWrapper<RoleMenu>().in(RoleMenu::getRoleId, roleIdList).eq(RoleMenu::getStatus,1).eq(RoleMenu::getIsDelete,0));
+        //组装菜单id 并去重
+        List<Long> menuIdList = roleMenuList.stream().map(RoleMenu::getMenuId).distinct().collect(Collectors.toList());
+        //获取菜单信息
+        List<Menu> menuList = menuMapper.selectList(new LambdaQueryWrapper<Menu>().in(Menu::getId, menuIdList).eq(Menu::getStatus,1).eq(Menu::getIsDelete,0));
+        List<MenuItem> menuItemList = MenuUtil.buildMenuTree(menuList);
+        return menuItemList;
+
+
+
+
+    }
+
+    @Override
+    public LoginUserVo refreshToken(String refreshToken,String accessToken) {
+
+        //根据refreshToken查看token
+        String refreshTokenValue = redisTemplate.opsForValue().get("user:login:refreshToken:" + refreshToken);
+        if (!Objects.isNull(refreshTokenValue) && !refreshTokenValue.equals("")) {
+            //通过token值获取用户信息
+            String redisUserDetailJson = redisTemplate.opsForValue().get("user:login:accessToken:" + refreshTokenValue);
+            if (!Objects.isNull(redisUserDetailJson) && !redisUserDetailJson.equals("")) {
+                    //创建新的token和refreshToken
+                    String newAccessToken = UUID.randomUUID().toString().replace("-", "");
+                    String newRefreshToken = UUID.randomUUID().toString().replace("-", "");
+                    redisTemplate.opsForValue().set("user:login:refreshToken:"+newRefreshToken, newAccessToken, 1, TimeUnit.HOURS);
+                    redisTemplate.opsForValue().set("user:login:accessToken:"+newAccessToken,redisUserDetailJson ,1, TimeUnit.HOURS);
+                    //删除旧的token和refreshtoken
+                    redisTemplate.delete("user:login:accessToken:"+accessToken);
+                    redisTemplate.delete("user:login:refreshToken:" + refreshToken);
+                LoginUserDetail loginUserDetail = JSON.parseObject(redisUserDetailJson, LoginUserDetail.class);
+                LoginUserVo loginUserVo = LoginUserVo.builder()
+                            .username(loginUserDetail.getUsername())
+                            .accessToken(newAccessToken).refreshToken(newRefreshToken)
+                            .avatar(loginUserDetail.getUser().getAvatar())
+                            .nickname(loginUserDetail.getUser().getNickName())
+                            .expires(LocalDateTime.now().plusHours(1)).
+                            build();
+                    return loginUserVo;
+
+                }
         }
         return null;
     }
