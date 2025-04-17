@@ -1,7 +1,7 @@
 package cn.kshost.fastview.backend.controller;
 
-import cn.kshost.fastview.backend.pojo.MenuItem;
-import cn.kshost.fastview.backend.pojo.User;
+import cn.kshost.fastview.backend.pojo.po.MenuItem;
+import cn.kshost.fastview.backend.pojo.po.User;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
 import cn.kshost.fastview.backend.security.LoginUserDetail;
 import cn.kshost.fastview.backend.service.IUserService;
@@ -36,7 +36,7 @@ public class UserController {
 
     @Operation(summary = "用户登录")
     @PostMapping("/login")
-    public Result login(@RequestBody User user) {
+    public Result<LoginUserVo> login(@RequestBody User user) {
 
         LoginUserVo loginUserVo=  userService.login(user);
        if (!Objects.isNull(loginUserVo)) {
@@ -47,7 +47,7 @@ public class UserController {
 
     @Operation(summary = "根据token获取路由")
     @GetMapping("/getAsyncRoutes")
-    public Result getAsyncRoutes(HttpServletRequest request) {
+    public Result<List<MenuItem>> getAsyncRoutes(HttpServletRequest request) {
         //获取用户信息
         LoginUserDetail loginUserDetail = FastViewContextUtil.getLoginUserDetail();
         List<MenuItem> menuItemList  =  userService.getMenuItemList(loginUserDetail);
@@ -57,7 +57,7 @@ public class UserController {
 
     @Operation(summary ="刷新token")
     @PostMapping("/refreshToken")
-    public  Result refreshToken(@RequestBody LoginUserVo loginUserVo,HttpServletRequest request) {
+    public Result<LoginUserVo> refreshToken(@RequestBody LoginUserVo loginUserVo,HttpServletRequest request) {
         String accessToken = TokenUtil.getToken(request);
         LoginUserVo newloginUserVo =  userService.refreshToken(loginUserVo.getRefreshToken(),accessToken);
         if (!Objects.isNull(loginUserVo)) {

@@ -1,7 +1,7 @@
 package cn.kshost.fastview.backend.util;
 
-import cn.kshost.fastview.backend.pojo.Menu;
-import cn.kshost.fastview.backend.pojo.MenuItem;
+import cn.kshost.fastview.backend.pojo.po.Menu;
+import cn.kshost.fastview.backend.pojo.po.MenuItem;
 import com.alibaba.fastjson2.JSON;
 import org.springframework.beans.BeanUtils;
 

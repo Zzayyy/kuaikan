@@ -1,7 +1,7 @@
 package cn.kshost.fastview.backend;
 
 import cn.kshost.fastview.backend.mapper.UserMapper;
-import cn.kshost.fastview.backend.pojo.User;
+import cn.kshost.fastview.backend.pojo.po.User;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

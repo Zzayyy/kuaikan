@@ -1,7 +1,7 @@
 package cn.kshost.fastview.backend.service;
 
 
-import cn.kshost.fastview.backend.pojo.UserRole;
+import cn.kshost.fastview.backend.pojo.po.UserRole;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

@@ -1,6 +1,6 @@
 package cn.kshost.fastview.backend.security;
 
-import cn.kshost.fastview.backend.pojo.User;
+import cn.kshost.fastview.backend.pojo.po.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

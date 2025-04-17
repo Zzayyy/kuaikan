@@ -1,6 +1,6 @@
 package cn.kshost.fastview.backend.service.impl;
 
-import cn.kshost.fastview.backend.pojo.Video;
+import cn.kshost.fastview.backend.pojo.po.Video;
 import cn.kshost.fastview.backend.mapper.VideoMapper;
 import cn.kshost.fastview.backend.service.IVideoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

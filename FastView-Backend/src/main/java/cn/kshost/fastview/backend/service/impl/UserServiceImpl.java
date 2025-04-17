@@ -4,7 +4,7 @@ import cn.kshost.fastview.backend.mapper.MenuMapper;
 import cn.kshost.fastview.backend.mapper.RoleMenuMapper;
 import cn.kshost.fastview.backend.mapper.UserMapper;
 import cn.kshost.fastview.backend.mapper.UserRoleMapper;
-import cn.kshost.fastview.backend.pojo.*;
+import cn.kshost.fastview.backend.pojo.po.*;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
 import cn.kshost.fastview.backend.security.LoginUserDetail;
 import cn.kshost.fastview.backend.service.IUserService;
@@ -78,7 +78,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         Long userId = loginUserDetail.getUser().getId();
         //获取该用户角色列表
         List<UserRole> userRolesList = userRoleMapper.selectList(new LambdaQueryWrapper<UserRole>().eq(UserRole::getUserId, userId).eq(UserRole::getStatus,1).eq(UserRole::getIsDelete,0));
-        //组装角色id
+        //角色id提取
         List<Long> roleIdList = userRolesList.stream().map(UserRole::getRoleId).collect(Collectors.toList());
         //获取该角色菜单列表
         List<RoleMenu> roleMenuList = roleMenuMapper.selectList(new LambdaQueryWrapper<RoleMenu>().in(RoleMenu::getRoleId, roleIdList).eq(RoleMenu::getStatus,1).eq(RoleMenu::getIsDelete,0));

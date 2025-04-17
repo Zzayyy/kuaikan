@@ -1,6 +1,6 @@
 package cn.kshost.fastview.backend.service.impl;
 import cn.kshost.fastview.backend.mapper.RoleMenuMapper;
-import cn.kshost.fastview.backend.pojo.RoleMenu;
+import cn.kshost.fastview.backend.pojo.po.RoleMenu;
 import cn.kshost.fastview.backend.service.IRoleMenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
