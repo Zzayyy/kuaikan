@@ -6,7 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/config/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/config/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginAuthenticationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginUserDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginUserDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginUserDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LogoutAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LogoutAuthentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/TokenParseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/TokenParseFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/util/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/result/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -33,9 +45,6 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="2" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -50,9 +59,12 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.CodeGenetatr.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;JUnit.UserTest.findUserByUsername.executor&quot;: &quot;Debug&quot;,
     &quot;JUnit.UserTest.insetUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.123.html.executor&quot;: &quot;Run&quot;,
     &quot;Maven.FastView [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FastView-Backend [clean].executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -72,7 +84,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -84,6 +96,9 @@
       <recent name="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/backend" />
       <recent name="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/user" />
       <recent name="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.kshost.fastview.backend.pojo.result" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.FastViewBackendApplication">
@@ -132,6 +147,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="123.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/FastView/FastView-Backend/123.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="FastViewBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="FastView-Backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.kshost.fastview.backend.FastViewBackendApplication" />
@@ -148,7 +166,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.FastViewBackendApplication" />
+        <item itemvalue="JavaScript Debug.123.html" />
         <item itemvalue="JUnit.UserTest.insetUserTest" />
+        <item itemvalue="Application.CodeGenetatr" />
         <item itemvalue="JUnit.UserTest.findUserByUsername" />
       </list>
     </recent_temporary>
@@ -156,8 +176,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -180,7 +200,9 @@
       <workItem from="1744612158614" duration="2000" />
       <workItem from="1744616707466" duration="10527000" />
       <workItem from="1744685273606" duration="4877000" />
-      <workItem from="1744779411727" duration="403000" />
+      <workItem from="1744703611185" duration="5973000" />
+      <workItem from="1744777686898" duration="20987000" />
+      <workItem from="1744861514029" duration="5458000" />
     </task>
     <servers />
   </component>
@@ -194,11 +216,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/cn/kshost/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/UserServiceImpl.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
