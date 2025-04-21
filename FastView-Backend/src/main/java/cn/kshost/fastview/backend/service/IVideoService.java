@@ -1,6 +1,8 @@
 package cn.kshost.fastview.backend.service;
 
 import cn.kshost.fastview.backend.pojo.po.Video;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IVideoService extends IService<Video> {
 
+    IPage<Video> getVideoPage(Page<Video> page);
 }
