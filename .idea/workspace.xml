@@ -4,20 +4,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="">
+    <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="新增系统用户查询">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginUserDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginUserDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LoginUserDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LogoutAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/LogoutAuthentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/TokenParseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/security/TokenParseFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/util/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/application-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/CodeGenetatr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/FastViewBackendApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/config/MybatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/config/SpringSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/config/SwaggerConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/controller/MenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/controller/RoleMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/controller/UserRoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/controller/VideoCategoryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/controller/VideoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/mapper/MenuMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/mapper/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/mapper/RoleMenuMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/mapper/UserRoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/mapper/VideoCategoryMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/mapper/VideoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/MenuItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/RoleMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/UserRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/Video.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/VideoCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/result/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/vo/LoginUserVo$LoginUserVoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/pojo/vo/LoginUserVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/security/LoginAuthenticationEntryPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/security/LoginUserDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/security/LoginUserDetailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/security/LogoutAuthentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/security/TokenParseFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/IMenuService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/IRoleMenuService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/IRoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/IUserRoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/IUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/IVideoCategoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/IVideoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/impl/MenuServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/impl/RoleMenuServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/impl/RoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/impl/UserRoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/impl/VideoCategoryServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/service/impl/VideoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/util/FastViewContextUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/util/MenuUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/cn/kshost/fastview/backend/util/TokenUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/mapper/backend/MenuMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/mapper/backend/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/mapper/backend/RoleMenuMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/mapper/backend/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/mapper/backend/UserRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/mapper/backend/VideoCategoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/mapper/backend/VideoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/target/classes/mybatis-config.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +86,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -44,6 +97,9 @@
         <option name="userSettingsFile" value="$USER_HOME$/software/dev/apache-maven-3.9.9/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -203,6 +259,7 @@
       <workItem from="1744703611185" duration="5973000" />
       <workItem from="1744777686898" duration="20987000" />
       <workItem from="1744861514029" duration="5458000" />
+      <workItem from="1745318875182" duration="315000" />
     </task>
     <servers />
   </component>
