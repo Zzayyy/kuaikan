@@ -2,14 +2,12 @@ package cn.kshost.fastview.backend.controller;
 
 import cn.kshost.fastview.backend.pojo.MenuItem;
 import cn.kshost.fastview.backend.pojo.User;
-import cn.kshost.fastview.backend.pojo.result.Result;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
 import cn.kshost.fastview.backend.security.LoginUserDetail;
-import cn.kshost.fastview.backend.service.IMenuService;
 import cn.kshost.fastview.backend.service.IUserService;
+import cn.kshost.fastview.backend.pojo.result.Result;
 import cn.kshost.fastview.backend.util.FastViewContextUtil;
 import cn.kshost.fastview.backend.util.TokenUtil;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,10 +29,11 @@ import java.util.Objects;
 @RequestMapping("/user")
 @Tag(name = "用户接口")
 public class UserController {
+
+
     @Autowired
     private IUserService userService;
-    @Autowired
-    private IMenuService menuService;
+
     @Operation(summary = "用户登录")
     @PostMapping("/login")
     public Result login(@RequestBody User user) {
@@ -45,6 +44,7 @@ public class UserController {
        }
            return Result.error("用户名或密码错误",null);
     }
+
     @Operation(summary = "根据token获取路由")
     @GetMapping("/getAsyncRoutes")
     public Result getAsyncRoutes(HttpServletRequest request) {
@@ -54,6 +54,7 @@ public class UserController {
 
         return Result.success("success", menuItemList);
     }
+
     @Operation(summary ="刷新token")
     @PostMapping("/refreshToken")
     public  Result refreshToken(@RequestBody LoginUserVo loginUserVo,HttpServletRequest request) {
@@ -63,13 +64,13 @@ public class UserController {
             return Result.success("success",newloginUserVo);
         }
         return Result.error("信息错误",null);
+
     }
-    @Operation(summary = "获取所有用户信息")
-    @GetMapping("/getAllSysUsers")
-    public Result getAllSysUsers(Integer pageNum,Integer pageSize) {
-        Page<User> userPageInfo = userService.getAllSysUsers(pageNum, pageSize);
-        return Result.success("success",userPageInfo);
-    }
+
+
+
+
+
 
 
 }

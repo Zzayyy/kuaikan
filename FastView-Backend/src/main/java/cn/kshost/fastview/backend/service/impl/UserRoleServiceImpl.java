@@ -1,6 +1,6 @@
 package cn.kshost.fastview.backend.service.impl;
 import cn.kshost.fastview.backend.mapper.UserRoleMapper;
-import cn.kshost.fastview.backend.pojo.UserRole;
+import cn.kshost.fastview.backend.pojo.po.UserRole;
 import cn.kshost.fastview.backend.service.IUserRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;

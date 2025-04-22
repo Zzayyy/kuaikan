@@ -1,5 +1,5 @@
 package cn.kshost.fastview.backend.mapper;
-import cn.kshost.fastview.backend.pojo.Role;
+import cn.kshost.fastview.backend.pojo.po.Role;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

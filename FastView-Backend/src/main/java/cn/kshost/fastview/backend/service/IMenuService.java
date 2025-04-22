@@ -1,5 +1,5 @@
 package cn.kshost.fastview.backend.service;
-import cn.kshost.fastview.backend.pojo.Menu;
+import cn.kshost.fastview.backend.pojo.po.Menu;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

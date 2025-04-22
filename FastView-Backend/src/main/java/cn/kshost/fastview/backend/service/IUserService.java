@@ -1,7 +1,7 @@
 package cn.kshost.fastview.backend.service;
 
-import cn.kshost.fastview.backend.pojo.MenuItem;
-import cn.kshost.fastview.backend.pojo.User;
+import cn.kshost.fastview.backend.pojo.po.MenuItem;
+import cn.kshost.fastview.backend.pojo.po.User;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
 import cn.kshost.fastview.backend.security.LoginUserDetail;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

@@ -1,6 +1,6 @@
 package cn.kshost.fastview.backend.service.impl;
 import cn.kshost.fastview.backend.mapper.MenuMapper;
-import cn.kshost.fastview.backend.pojo.Menu;
+import cn.kshost.fastview.backend.pojo.po.Menu;
 import cn.kshost.fastview.backend.service.IMenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;

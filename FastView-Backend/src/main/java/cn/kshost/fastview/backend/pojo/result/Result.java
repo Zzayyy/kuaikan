@@ -3,34 +3,35 @@ package cn.kshost.fastview.backend.pojo.result;
 import lombok.Data;
 
 @Data
-public class Result {
+public class Result<T> {
 
-    private  Integer code ;
-    private  String message ;
-    private  Object data ;
+    private Integer code;
+    private String message;
+    private T data;
 
-
-    public  Result(Integer code, String message, Object data) {
+    public Result(Integer code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
     }
 
-    public static Result success(String message, Object data) {
-       return new Result(200, message, data);
-    }
-    public static Result success(String message) {
-        return new Result(200, "操作成功", null);
-    }
-    public static Result success(Object data) {
-        return new Result(200,"操作成功", data);
-    }
-    public static Result error( String message,Object data) {
-        return new Result(-1,message, data);
-    }
-    public static Result error( Integer code,String message){
-        return new Result(code,message,null);
-
+    public static <T> Result<T> success(String message, T data) {
+        return new Result<>(200, message, data);
     }
 
+    public static <T> Result<T> success(String message) {
+        return new Result<>(200, message, null);
+    }
+
+    public static <T> Result<T> success(T data) {
+        return new Result<>(200, "操作成功", data);
+    }
+
+    public static <T> Result<T> error(String message, T data) {
+        return new Result<>(-1, message, data);
+    }
+
+    public static <T> Result<T> error(Integer code, String message) {
+        return new Result<>(code, message, null);
+    }
 }

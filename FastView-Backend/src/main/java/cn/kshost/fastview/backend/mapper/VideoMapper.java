@@ -1,6 +1,6 @@
 package cn.kshost.fastview.backend.mapper;
 
-import cn.kshost.fastview.backend.pojo.Video;
+import cn.kshost.fastview.backend.pojo.po.Video;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

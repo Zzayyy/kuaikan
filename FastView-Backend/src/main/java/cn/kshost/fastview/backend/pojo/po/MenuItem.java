@@ -1,4 +1,4 @@
-package cn.kshost.fastview.backend.pojo;
+package cn.kshost.fastview.backend.pojo.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

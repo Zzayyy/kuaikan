@@ -2,7 +2,7 @@ package cn.kshost.fastview.backend.service.impl;
 
 
 import cn.kshost.fastview.backend.mapper.RoleMapper;
-import cn.kshost.fastview.backend.pojo.Role;
+import cn.kshost.fastview.backend.pojo.po.Role;
 import cn.kshost.fastview.backend.service.IRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
