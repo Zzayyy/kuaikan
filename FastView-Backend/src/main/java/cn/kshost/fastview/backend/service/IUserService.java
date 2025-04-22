@@ -4,6 +4,7 @@ import cn.kshost.fastview.backend.pojo.MenuItem;
 import cn.kshost.fastview.backend.pojo.User;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
 import cn.kshost.fastview.backend.security.LoginUserDetail;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -23,4 +24,6 @@ public interface IUserService extends IService<User> {
     List<MenuItem> getMenuItemList(LoginUserDetail loginUserDetail);
 
     LoginUserVo refreshToken(String refreshToken,String accessToken);
+
+    Page<User> getAllSysUsers(Integer pageNum, Integer pageSize);
 }

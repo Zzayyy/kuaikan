@@ -11,6 +11,8 @@ import cn.kshost.fastview.backend.service.IUserService;
 import cn.kshost.fastview.backend.util.MenuUtil;
 import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -50,6 +52,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private RoleMenuServiceImpl roleMenuServiceImpl;
     @Autowired
     private RoleMenuMapper roleMenuMapper;
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public LoginUserVo login(User user) {
@@ -124,5 +128,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                 }
         }
         return null;
+    }
+
+    @Override
+    public Page<User> getAllSysUsers(Integer pageNum, Integer pageSize) {
+        Page<User> page = new Page<>(pageNum, pageSize);
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.eq("is_delete", 0);
+        userQueryWrapper.select("id","username","nick_name","phone","avatar","status","create_time","update_time");
+        Page<User> userPage = userMapper.selectPage(page, userQueryWrapper);
+       return  userPage;
+
+
     }
 }

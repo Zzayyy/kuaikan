@@ -28,6 +28,5 @@ public class SwaggerConfiguration {
                         .contact(new Contact().name("杨文胜").email("ywscode@163.com"))
                         .license(new License().name("Edwin").url("http://www.kshost.cn"))
                 );
-
     }
 }
