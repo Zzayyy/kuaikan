@@ -1,11 +1,12 @@
 package cn.kshost.fastview.backend.controller;
 
+import cn.kshost.fastview.backend.pojo.dto.UserQueryDto;
 import cn.kshost.fastview.backend.pojo.po.MenuItem;
 import cn.kshost.fastview.backend.pojo.po.User;
+import cn.kshost.fastview.backend.pojo.result.Result;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
 import cn.kshost.fastview.backend.security.LoginUserDetail;
 import cn.kshost.fastview.backend.service.IUserService;
-import cn.kshost.fastview.backend.pojo.result.Result;
 import cn.kshost.fastview.backend.util.FastViewContextUtil;
 import cn.kshost.fastview.backend.util.TokenUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -68,16 +69,26 @@ public class UserController {
     }
 
     @Operation(summary = "分页查询系统用户")
-    @GetMapping("getAllSysUsers")
-    public Result getAllSysUsers(Integer pageSize, Integer pageNum) {
-        Page<User> allSysUsers = userService.getAllSysUsers(pageNum, pageSize);
+    @PostMapping("/getAllSysUsers")
+    public Result getAllSysUsers(@RequestBody UserQueryDto userQueryDto) {
+        Page<User> allSysUsers = userService.getAllSysUsers(userQueryDto);
         return Result.success("success",allSysUsers);
     }
 
+    @Operation(summary = "根据用户id列表删除用户")
+    @DeleteMapping("/deleteByIds")
+    public Result deleteByIds(@RequestBody List<Integer> ids) {
+        userService.deleteByIds(ids);
+        return Result.success("success");
+    }
 
+    @Operation(summary = "添加系统用户")
+    @PostMapping("/addSysUser")
+    public Result addSysUser(@RequestBody User user) {
 
-
-
+        userService.addSysUser(user);
+        return Result.success("success");
+    }
 
 
 }

@@ -1,5 +1,6 @@
 package cn.kshost.fastview.backend.service;
 
+import cn.kshost.fastview.backend.pojo.dto.UserQueryDto;
 import cn.kshost.fastview.backend.pojo.po.MenuItem;
 import cn.kshost.fastview.backend.pojo.po.User;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
@@ -25,5 +26,9 @@ public interface IUserService extends IService<User> {
 
     LoginUserVo refreshToken(String refreshToken,String accessToken);
 
-    Page<User> getAllSysUsers(Integer pageNum, Integer pageSize);
+    Page<User> getAllSysUsers(UserQueryDto userQueryDto);
+
+    void deleteByIds(List<Integer> ids);
+
+    void addSysUser(User user);
 }

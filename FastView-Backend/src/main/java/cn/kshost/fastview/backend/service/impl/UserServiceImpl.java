@@ -4,6 +4,7 @@ import cn.kshost.fastview.backend.mapper.MenuMapper;
 import cn.kshost.fastview.backend.mapper.RoleMenuMapper;
 import cn.kshost.fastview.backend.mapper.UserMapper;
 import cn.kshost.fastview.backend.mapper.UserRoleMapper;
+import cn.kshost.fastview.backend.pojo.dto.UserQueryDto;
 import cn.kshost.fastview.backend.pojo.po.*;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
 import cn.kshost.fastview.backend.security.LoginUserDetail;
@@ -19,6 +20,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -38,6 +40,9 @@ import java.util.stream.Collectors;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
 
     @Autowired
@@ -131,13 +136,43 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
-    public Page<User> getAllSysUsers(Integer pageNum, Integer pageSize) {
-        Page<User> page = new Page<>(pageNum, pageSize);
+    public Page<User> getAllSysUsers(UserQueryDto userQueryDto) {
+        Page<User> page = new Page<>(userQueryDto.getPageNum(), userQueryDto.getPageSize());
         QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("is_delete", 0);
         userQueryWrapper.select("id","username","nick_name","phone","avatar","status","create_time","update_time");
+        if (userQueryDto.getUsername() != null &&  userQueryDto.getUsername().length() > 0) {
+            userQueryWrapper.like("username", userQueryDto.getUsername());
+        }
+        if (userQueryDto.getNickName() != null &&  userQueryDto.getNickName().length() > 0) {
+            userQueryWrapper.like("nick_name", userQueryDto.getNickName());
+        }
+        if (userQueryDto.getPhone() != null &&  userQueryDto.getPhone().length() > 0) {
+            userQueryWrapper.like("phone", userQueryDto.getPhone());
+        }
+        if (userQueryDto.getStatus() != null) {
+            userQueryWrapper.eq("status", userQueryDto.getStatus());
+        }
         Page<User> userPage = userMapper.selectPage(page, userQueryWrapper);
        return  userPage;
+
+
+    }
+
+    @Override
+    public void deleteByIds(List<Integer> ids) {
+        userMapper.deleteBatchIds(ids);
+    }
+
+    @Override
+    public void addSysUser(User user) {
+
+        //对密码进行加密并设置
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        //设置当前时间
+        user.setCreateTime(LocalDateTime.now());
+        user.setUpdateTime(LocalDateTime.now());
+        userMapper.insert(user);
 
 
     }
