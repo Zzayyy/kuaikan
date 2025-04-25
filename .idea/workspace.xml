@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="video查询列表">
+    <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="feat(backend): 新增VideoTagController等">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/VideoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/mapper/VideoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/mapper/VideoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IVideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IVideoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/VideoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/VideoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/backend/VideoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/backend/VideoMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,15 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/software/dev/apache-maven-3.9.9/repo/com/baomidou/mybatis-plus-core/3.5.11/mybatis-plus-core-3.5.11.jar!/com/baomidou/mybatisplus/core/conditions/query/Query.class" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/software/dev/apache-maven-3.9.9/repo/com/baomidou/mybatis-plus-core/3.5.11/mybatis-plus-core-3.5.11.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.class" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/software/dev/apache-maven-3.9.9/repo/com/baomidou/mybatis-plus-extension/3.5.11/mybatis-plus-extension-3.5.11.jar!/com/baomidou/mybatisplus/extension/plugins/pagination/Page.class" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/software/dev/apache-maven-3.9.9/repo/com/baomidou/mybatis-plus-extension/3.5.11/mybatis-plus-extension-3.5.11.jar!/com/baomidou/mybatisplus/extension/repository/IRepository.class" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/software/dev/apache-maven-3.9.9/repo/io/swagger/core/v3/swagger-annotations-jakarta/2.2.8/swagger-annotations-jakarta-2.2.8.jar!/io/swagger/v3/oas/annotations/media/Schema.class" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/software/dev/apache-maven-3.9.9/repo/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar!/lombok/Builder.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -61,48 +47,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CodeGenetatr.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.UserTest.findUserByUsername.executor": "Debug",
-    "JUnit.UserTest.insetUserTest.executor": "Run",
-    "JavaScript Debug.123.html.executor": "Run",
-    "Maven.FastView [clean].executor": "Run",
-    "Maven.FastView-Backend [clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.FastViewBackendApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/yws/IdeaProjects/code",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/yws/IdeaProjects/FastView/FastView-Backend/src/main/java/cn/kshost/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CodeGenetatr.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.UserTest.findUserByUsername.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserTest.insetUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.123.html.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FastView [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FastView-Backend [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.FastViewBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yws/IdeaProjects/code&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/yws/IdeaProjects/FastView/FastView-Backend/src/main/java/cn/kshost/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Code_java\fastview\FastView-Backend\src\main\resources\mapper\backend" />
       <recent name="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/backend" />
       <recent name="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/user" />
       <recent name="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper" />
@@ -176,9 +163,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.FastViewBackendApplication" />
-        <item itemvalue="JavaScript Debug.123.html" />
         <item itemvalue="JUnit.UserTest.insetUserTest" />
-        <item itemvalue="Application.CodeGenetatr" />
         <item itemvalue="JUnit.UserTest.findUserByUsername" />
       </list>
     </recent_temporary>
@@ -186,8 +171,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
@@ -213,73 +198,32 @@
       <workItem from="1744703611185" duration="5973000" />
       <workItem from="1744777686898" duration="20987000" />
       <workItem from="1744861514029" duration="5458000" />
-      <workItem from="1745318875182" duration="7001000" />
-      <workItem from="1745384458505" duration="5073000" />
-      <workItem from="1745485731573" duration="604000" />
-      <workItem from="1745500761820" duration="4249000" />
-      <workItem from="1745543478111" duration="6245000" />
+      <workItem from="1745385756796" duration="2191000" />
+      <workItem from="1745413434319" duration="148000" />
+      <workItem from="1745414274872" duration="13480000" />
+      <workItem from="1745543853850" duration="2512000" />
+      <workItem from="1745548340526" duration="2983000" />
+      <workItem from="1745551386034" duration="78000" />
+      <workItem from="1745563597147" duration="7151000" />
+      <workItem from="1745571222766" duration="2286000" />
     </task>
-    <task id="LOCAL-00001" summary="新增系统用户查询">
+    <task id="LOCAL-00001" summary="feat(backend): 新增VideoTagController等">
       <option name="closed" value="true" />
-      <created>1745319398179</created>
+      <created>1745573507943</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1745319398179</updated>
+      <updated>1745573507943</updated>
     </task>
-    <task id="LOCAL-00002" summary="新增系统用户添加">
-      <option name="closed" value="true" />
-      <created>1745384506515</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1745384506515</updated>
-    </task>
-    <task id="LOCAL-00003" summary="修改视频后台接口">
-      <option name="closed" value="true" />
-      <created>1745506322878</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1745506322878</updated>
-    </task>
-    <task id="LOCAL-00004" summary="修改视频后台接口">
-      <option name="closed" value="true" />
-      <created>1745543532705</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1745543532705</updated>
-    </task>
-    <task id="LOCAL-00005" summary="修改视频后台分页查询">
-      <option name="closed" value="true" />
-      <created>1745548119007</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1745548119007</updated>
-    </task>
-    <task id="LOCAL-00006" summary="video查询列表">
-      <option name="closed" value="true" />
-      <created>1745548578383</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1745548578383</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="新增系统用户查询" />
-    <MESSAGE value="新增系统用户添加" />
-    <MESSAGE value="修改视频后台接口" />
-    <MESSAGE value="修改视频后台分页查询" />
-    <MESSAGE value="video查询列表" />
-    <option name="LAST_COMMIT_MESSAGE" value="video查询列表" />
+    <MESSAGE value="feat(backend): 新增VideoTagController等" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(backend): 新增VideoTagController等" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -289,18 +233,8 @@
           <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/VideoServiceImpl.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="videoList.get(1)" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
