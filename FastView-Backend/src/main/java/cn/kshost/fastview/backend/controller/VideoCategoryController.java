@@ -1,8 +1,10 @@
 package cn.kshost.fastview.backend.controller;
 
+import cn.kshost.fastview.backend.pojo.dto.VideoQueryDto;
 import cn.kshost.fastview.backend.pojo.po.VideoCategory;
 import cn.kshost.fastview.backend.pojo.result.Result;
 import cn.kshost.fastview.backend.service.IVideoCategoryService;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,5 +74,18 @@ public class VideoCategoryController {
         videoCategory.setId(id);
         boolean result = videoCategoryService.updateById(videoCategory);
         return result ? Result.success("分类修改成功") : Result.error(500,"分类修改失败");
+    }
+
+    /**
+     * 分页查询视频分类
+     * @param videoQueryDto 分页查询对象
+     * @return 分页结果
+     */
+    @Operation(summary = "分页查询视频分类")
+    @PostMapping("/page")
+    public Result<Page<VideoCategory>> getVideoCategoryByPage(@RequestBody VideoQueryDto videoQueryDto) {
+        Page<VideoCategory> videoCategoryPage = new Page<>(videoQueryDto.getPageNum(), videoQueryDto.getPageSize());
+        Page<VideoCategory> videoCategoryList = videoCategoryService.page(videoCategoryPage);
+        return videoCategoryList != null ? Result.success(videoCategoryList) : Result.error(500,"分类查询失败");
     }
 }

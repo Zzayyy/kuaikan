@@ -25,7 +25,6 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
 
     @Override
     public Page<Video> getVideoPage(VideoQueryDto videoQueryDto) {
-
         Page<Video> videoPage = new Page<>(videoQueryDto.getPageNum(), videoQueryDto.getPageSize());
         videoPage = videoMapper.selectVideo(videoPage,videoQueryDto);
         return videoPage;

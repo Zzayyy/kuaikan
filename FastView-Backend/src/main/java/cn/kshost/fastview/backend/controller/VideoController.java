@@ -56,9 +56,9 @@ public class VideoController {
      */
     @Operation(summary = "分页查询视频信息")
     @PostMapping("/page")
-    public Result getVideoByPage(@RequestBody VideoQueryDto videoQueryDto){
-        Page<Video> videoPageInfo=   videoService.getVideoPage(videoQueryDto);
-       return Result.success(videoPageInfo);
+    public Result<Page<Video>> getVideoByPage(@RequestBody VideoQueryDto videoQueryDto){
+        Page<Video> videoPageInfo = videoService.getVideoPage(videoQueryDto);
+        return Result.success(videoPageInfo);
     }
 
     /**
