@@ -3,7 +3,6 @@
 <mapper namespace="cn.kshost.fastview.backend.mapper.VideoMapper">
 
     <select id="selectVideo" resultType="cn.kshost.fastview.backend.pojo.po.Video">
-
         select v.id id,
             `title`,
             descr,
