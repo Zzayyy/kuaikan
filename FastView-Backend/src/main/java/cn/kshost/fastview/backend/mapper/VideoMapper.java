@@ -3,9 +3,10 @@ package cn.kshost.fastview.backend.mapper;
 import cn.kshost.fastview.backend.pojo.dto.VideoQueryDto;
 import cn.kshost.fastview.backend.pojo.po.Video;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Mapper;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -18,6 +19,6 @@ import java.util.List;
 @Mapper
 public interface VideoMapper extends BaseMapper<Video> {
 
-    List<Video> selectVideo(VideoQueryDto videoQueryDto);
+    Page<Video> selectVideo(IPage<Video> iPage, @Param("videoQueryDto") VideoQueryDto videoQueryDto);
 }
 

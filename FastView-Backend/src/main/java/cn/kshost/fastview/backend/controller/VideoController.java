@@ -4,7 +4,7 @@ import cn.kshost.fastview.backend.pojo.dto.VideoQueryDto;
 import cn.kshost.fastview.backend.pojo.po.Video;
 import cn.kshost.fastview.backend.pojo.result.Result;
 import cn.kshost.fastview.backend.service.IVideoService;
-import com.github.pagehelper.PageInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -57,7 +57,7 @@ public class VideoController {
     @Operation(summary = "分页查询视频信息")
     @PostMapping("/page")
     public Result getVideoByPage(@RequestBody VideoQueryDto videoQueryDto){
-        PageInfo<Video> videoPageInfo=   videoService.getVideoPage(videoQueryDto);
+        Page<Video> videoPageInfo=   videoService.getVideoPage(videoQueryDto);
        return Result.success(videoPageInfo);
     }
 

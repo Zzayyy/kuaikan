@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="修改视频后台分页查询">
+    <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="video查询列表">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/VideoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/mapper/VideoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/mapper/VideoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IVideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IVideoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/VideoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/VideoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/backend/VideoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/resources/mapper/backend/VideoMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +217,7 @@
       <workItem from="1745384458505" duration="5073000" />
       <workItem from="1745485731573" duration="604000" />
       <workItem from="1745500761820" duration="4249000" />
-      <workItem from="1745543478111" duration="4901000" />
+      <workItem from="1745543478111" duration="6245000" />
     </task>
     <task id="LOCAL-00001" summary="新增系统用户查询">
       <option name="closed" value="true" />
@@ -256,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745548119007</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="video查询列表">
+      <option name="closed" value="true" />
+      <created>1745548578383</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745548578383</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +278,8 @@
     <MESSAGE value="新增系统用户添加" />
     <MESSAGE value="修改视频后台接口" />
     <MESSAGE value="修改视频后台分页查询" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改视频后台分页查询" />
+    <MESSAGE value="video查询列表" />
+    <option name="LAST_COMMIT_MESSAGE" value="video查询列表" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,13 +291,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/VideoServiceImpl.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/VideoServiceImpl.java</url>
           <line>32</line>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

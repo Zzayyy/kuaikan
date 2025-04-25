@@ -18,17 +18,17 @@
             category_name
             from video v left join video_category vk on v.category_id = vk.id
             <where>
-                <if  test="title != null and title != ''">
-                  and  v.title like CONCAT('%',#{title},'%')
+                <if  test="videoQueryDto.title != null and videoQueryDto.title != ''">
+                  and  v.title like CONCAT('%',#{videoQueryDto.title},'%')
                 </if>
-                <if  test="stars != null and stars != ''">
-                    and v.stars &gt;= #{stars}
+                <if  test="videoQueryDto.stars != null and videoQueryDto.stars != ''">
+                    and v.stars &gt;= #{videoQueryDto.stars}
                 </if>
-                <if  test="status != null and status != ''">
-                    and  v.status = #{status}
+                <if  test="videoQueryDto.status != null and videoQueryDto.status != ''">
+                    and  v.status = #{videoQueryDto.status}
                 </if>
-                <if  test="categoryId != null and categoryId != ''">
-                    and v.category_id = #{categoryId}
+                <if  test="videoQueryDto.categoryId != null and videoQueryDto.categoryId != ''">
+                    and v.category_id = #{videoQueryDto.categoryId}
                 </if>
                 and v.is_delete = 0
             </where>
