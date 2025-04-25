@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="新增系统用户查询">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="a1454c0d-035a-4ba6-83d6-01e82546f2dc" name="Changes" comment="修改视频后台接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/pojo/po/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FastView-Backend/src/main/java/cn/kshost/fastview/backend/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,38 +48,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CodeGenetatr.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.UserTest.findUserByUsername.executor": "Debug",
-    "JUnit.UserTest.insetUserTest.executor": "Run",
-    "JavaScript Debug.123.html.executor": "Run",
-    "Maven.FastView [clean].executor": "Run",
-    "Maven.FastView-Backend [clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.FastViewBackendApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/yws/IdeaProjects/code",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/yws/IdeaProjects/FastView/FastView-Backend/src/main/java/cn/kshost/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.customizations",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CodeGenetatr.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.UserTest.findUserByUsername.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserTest.insetUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.123.html.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FastView [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FastView-Backend [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.FastViewBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yws/IdeaProjects/code&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/yws/IdeaProjects/FastView/FastView-Backend/src/main/java/cn/kshost/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -202,6 +196,9 @@
       <workItem from="1744777686898" duration="20987000" />
       <workItem from="1744861514029" duration="5458000" />
       <workItem from="1745318875182" duration="7001000" />
+      <workItem from="1745384458505" duration="5073000" />
+      <workItem from="1745485731573" duration="604000" />
+      <workItem from="1745500761820" duration="4249000" />
     </task>
     <task id="LOCAL-00001" summary="新增系统用户查询">
       <option name="closed" value="true" />
@@ -211,7 +208,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745319398179</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="新增系统用户添加">
+      <option name="closed" value="true" />
+      <created>1745384506515</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745384506515</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修改视频后台接口">
+      <option name="closed" value="true" />
+      <created>1745506322878</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745506322878</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +232,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增系统用户查询" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增系统用户查询" />
+    <MESSAGE value="新增系统用户添加" />
+    <MESSAGE value="修改视频后台接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改视频后台接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
