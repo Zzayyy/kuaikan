@@ -97,4 +97,8 @@ public class Video implements Serializable {
      */
     @TableField("category_id")
     private Long categoryId;
+
+    @TableField("category_id")
+    private String categoryName;
+
 }

@@ -1,12 +1,16 @@
 package cn.kshost.fastview.backend.service.impl;
 
 import cn.kshost.fastview.backend.mapper.VideoMapper;
+import cn.kshost.fastview.backend.pojo.dto.VideoQueryDto;
 import cn.kshost.fastview.backend.pojo.po.Video;
 import cn.kshost.fastview.backend.service.IVideoService;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -19,8 +23,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements IVideoService {
 
+    @Autowired
+    private VideoMapper videoMapper;
+
     @Override
-    public IPage<Video> getVideoPage(Page<Video> page) {
-        return this.page(page);
+    public PageInfo<Video> getVideoPage(VideoQueryDto videoQueryDto) {
+        PageHelper.startPage(videoQueryDto.getPageNum(), videoQueryDto.getPageSize());
+      List<Video> videoList= videoMapper.selectVideo(videoQueryDto);
+        PageInfo<Video> videoPageInfo = new PageInfo<>(videoList);
+        return videoPageInfo;
     }
 }

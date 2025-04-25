@@ -1,8 +1,11 @@
 package cn.kshost.fastview.backend.mapper;
 
+import cn.kshost.fastview.backend.pojo.dto.VideoQueryDto;
 import cn.kshost.fastview.backend.pojo.po.Video;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -15,5 +18,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface VideoMapper extends BaseMapper<Video> {
 
+    List<Video> selectVideo(VideoQueryDto videoQueryDto);
 }
 
