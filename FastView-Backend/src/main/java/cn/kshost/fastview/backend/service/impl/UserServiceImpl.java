@@ -5,6 +5,7 @@ import cn.kshost.fastview.backend.mapper.RoleMenuMapper;
 import cn.kshost.fastview.backend.mapper.UserMapper;
 import cn.kshost.fastview.backend.mapper.UserRoleMapper;
 import cn.kshost.fastview.backend.pojo.dto.UserQueryDto;
+import cn.kshost.fastview.backend.pojo.dto.UserRoleIdsDto;
 import cn.kshost.fastview.backend.pojo.po.*;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
 import cn.kshost.fastview.backend.security.LoginUserDetail;
@@ -22,6 +23,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -39,12 +41,10 @@ import java.util.stream.Collectors;
  * @since 2025-04-11
  */
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
-
     @Autowired
     PasswordEncoder passwordEncoder;
-
-
     @Autowired
     private MenuMapper menuMapper;
     @Autowired
@@ -59,7 +59,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private RoleMenuMapper roleMenuMapper;
     @Autowired
     private UserMapper userMapper;
-
     @Override
     public LoginUserVo login(User user) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
@@ -97,10 +96,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         List<Menu> menuList = menuMapper.selectList(new LambdaQueryWrapper<Menu>().in(Menu::getId, menuIdList).eq(Menu::getStatus,1).eq(Menu::getIsDelete,0));
         List<MenuItem> menuItemList = MenuUtil.buildMenuTree(menuList);
         return menuItemList;
-
-
-
-
     }
 
     @Override
@@ -166,14 +161,27 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     public void addSysUser(User user) {
-
         //对密码进行加密并设置
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         //设置当前时间
         user.setCreateTime(LocalDateTime.now());
         user.setUpdateTime(LocalDateTime.now());
         userMapper.insert(user);
+    }
 
+    @Override
+    public List<Long> getRoleIdsByUserId(Long userId) {
+        List<UserRole> userRoles = userRoleMapper.selectList(new LambdaQueryWrapper<UserRole>().eq(UserRole::getUserId, userId).eq(UserRole::getStatus,1).eq(UserRole::getIsDelete,0));
+        return userRoles.stream().map(UserRole::getRoleId).distinct().collect(Collectors.toList());
+    }
+    @Override
+    public void modifyUserRole(UserRoleIdsDto userRoleIdsDto) {
+        //根据用户id删除所有角色列表
+        userRoleMapper.delete(new LambdaQueryWrapper<UserRole>().eq(UserRole::getUserId, userRoleIdsDto.getUserId()));
 
+        //插入角色列表
+        if (userRoleIdsDto.getRoleIds() != null && !userRoleIdsDto.getRoleIds().isEmpty()) {
+            userRoleMapper.insertUserRole(userRoleIdsDto);
+        }
     }
 }

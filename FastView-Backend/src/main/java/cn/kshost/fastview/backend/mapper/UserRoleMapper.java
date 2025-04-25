@@ -2,6 +2,7 @@ package cn.kshost.fastview.backend.mapper;
 
 
 
+import cn.kshost.fastview.backend.pojo.dto.UserRoleIdsDto;
 import cn.kshost.fastview.backend.pojo.po.UserRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
@@ -17,5 +18,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserRoleMapper extends BaseMapper<UserRole> {
 
+    void insertUserRole(UserRoleIdsDto userRoleIdsDto);
 }
 

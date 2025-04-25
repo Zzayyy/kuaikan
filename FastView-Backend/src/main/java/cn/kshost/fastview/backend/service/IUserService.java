@@ -1,6 +1,7 @@
 package cn.kshost.fastview.backend.service;
 
 import cn.kshost.fastview.backend.pojo.dto.UserQueryDto;
+import cn.kshost.fastview.backend.pojo.dto.UserRoleIdsDto;
 import cn.kshost.fastview.backend.pojo.po.MenuItem;
 import cn.kshost.fastview.backend.pojo.po.User;
 import cn.kshost.fastview.backend.pojo.vo.LoginUserVo;
@@ -31,4 +32,8 @@ public interface IUserService extends IService<User> {
     void deleteByIds(List<Integer> ids);
 
     void addSysUser(User user);
+
+    List<Long> getRoleIdsByUserId(Long userId);
+
+    void modifyUserRole(UserRoleIdsDto userRoleIdsDto);
 }
