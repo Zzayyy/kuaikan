@@ -92,7 +92,7 @@ public class UserController {
         return Result.success("success",roleId);
     }
 
-    @Operation(summary = "设置用户角色列表")
+    @Operation(summary = "给用户设置角色列表")
     @PostMapping("/modifyUserRole")
     public Result modifyUserRole(@RequestBody @Parameter(description = "传入用户id和角色id列表") UserRoleIdsDto userRoleIdsDto ) {
         userService.modifyUserRole(userRoleIdsDto);
