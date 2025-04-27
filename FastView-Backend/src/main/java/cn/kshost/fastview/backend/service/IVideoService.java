@@ -16,4 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IVideoService extends IService<Video> {
 
     Page<Video> getVideoPage(VideoQueryDto videoQueryDto);
+
+    boolean removeVideoWithTags(Long id);
 }

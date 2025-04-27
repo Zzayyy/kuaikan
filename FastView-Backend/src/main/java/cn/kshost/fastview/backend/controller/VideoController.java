@@ -69,7 +69,7 @@ public class VideoController {
     @Operation(summary = "根据id删除视频信息")
     @DeleteMapping("/{id}")
     public Result<String> deleteVideoById(@PathVariable Long id){
-        boolean result = videoService.removeById(id);
+        boolean result = videoService.removeVideoWithTags(id);
         return result ? Result.success("视频删除成功") : Result.error(500,"视频删除失败");
     }
 
