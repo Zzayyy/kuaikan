@@ -36,4 +36,6 @@ public interface IUserService extends IService<User> {
     List<Long> getRoleIdsByUserId(Long userId);
 
     void modifyUserRole(UserRoleIdsDto userRoleIdsDto);
+
+    void modifySysUserById(User user);
 }

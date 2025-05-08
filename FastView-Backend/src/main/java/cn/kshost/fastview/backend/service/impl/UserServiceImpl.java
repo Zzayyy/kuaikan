@@ -1,5 +1,9 @@
 package cn.kshost.fastview.backend.service.impl;
 
+import cn.kshost.fastview.backend.emus.FastViewEnum;
+import cn.kshost.fastview.backend.exception.DataException;
+import cn.kshost.fastview.backend.exception.LoginException;
+import cn.kshost.fastview.backend.exception.TokenException;
 import cn.kshost.fastview.backend.mapper.MenuMapper;
 import cn.kshost.fastview.backend.mapper.RoleMenuMapper;
 import cn.kshost.fastview.backend.mapper.UserMapper;
@@ -78,7 +82,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                     build();
             return loginUserVo;
         }
-        return null;
+       throw  new LoginException(FastViewEnum.USERNAME_PASSWORD_ERROR);
     }
 
     @Override
@@ -127,7 +131,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
                 }
         }
-        return null;
+        //抛出刷新失败异常
+        throw new TokenException(FastViewEnum.TOKEN_REFRESH_ERROR);
     }
 
     @Override
@@ -183,5 +188,26 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         if (userRoleIdsDto.getRoleIds() != null && !userRoleIdsDto.getRoleIds().isEmpty()) {
             userRoleMapper.insertUserRole(userRoleIdsDto);
         }
+    }
+
+    @Override
+    public void modifySysUserById(User user) {
+
+        if (!Objects.isNull(user)) {
+            if (user.getPassword() != null && user.getPassword().length() > 0) {
+                //加密密码
+                user.setPassword(passwordEncoder.encode(user.getPassword()));
+                user.setUpdateTime(LocalDateTime.now());
+                userMapper.updateById(user);
+                return;
+            }
+        }
+        throw  new DataException(FastViewEnum.DATA_ERROR);
+
+
+
+
+
+
     }
 }
