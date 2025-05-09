@@ -38,4 +38,6 @@ public interface IUserService extends IService<User> {
     void modifyUserRole(UserRoleIdsDto userRoleIdsDto);
 
     void modifySysUserById(User user);
+
+    User getSysUserById(Integer id);
 }

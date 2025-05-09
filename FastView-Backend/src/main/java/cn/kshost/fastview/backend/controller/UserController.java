@@ -38,7 +38,6 @@ public class UserController {
     @PostMapping("/login")
     public Result login(@RequestBody User user) {
         LoginUserVo loginUserVo=  userService.login(user);
-
            return Result.success("success",loginUserVo);
     }
 
@@ -63,7 +62,7 @@ public class UserController {
     @Operation(summary = "根据用户id查询用户")
     @GetMapping("/getSysUserById/{id}“")
     public Result getSysUserById(@PathVariable Integer id) {
-        User user = userService.getById(id);
+        User user = userService.getSysUserById(id);
        return   Result.success(FastViewEnum.QUERY_SUCCESS, user);
     }
 
@@ -100,7 +99,12 @@ public class UserController {
         return Result.success(FastViewEnum.QUERY_SUCCESS,roleIds);
     }
 
-    @Operation(summary = "给用户设置角色列表",description = "不论是新增的角色还是减少都用这个接口，将用户id和最终的角色id列表传入就行")
+    /**
+     * description = "不论是新增的角色还是减少都用这个接口，将用户id和最终的角色id列表传入就行"
+     * @param userRoleIdsDto
+     * @return
+     */
+    @Operation(summary = "给用户设置角色列表")
     @PostMapping("/modifyUserRole")
     public Result modifyUserRole(@RequestBody @Parameter(description = "传入用户id和角色id列表") UserRoleIdsDto userRoleIdsDto ) {
         userService.modifyUserRole(userRoleIdsDto);

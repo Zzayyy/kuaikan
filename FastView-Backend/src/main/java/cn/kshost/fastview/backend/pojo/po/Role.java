@@ -27,6 +27,7 @@ public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+
     /**
      * 主键ID
      */
@@ -61,11 +62,14 @@ public class Role implements Serializable {
      * 状态：1 正常，0 禁用
      */
     @TableField("status")
-    private Byte status;
+    private Integer status;
 
     /**
      * 逻辑删除：0 未删除，1 已删除
      */
     @TableField("is_delete")
-    private Byte isDelete;
+    private Integer isDelete;
+
+
+
 }

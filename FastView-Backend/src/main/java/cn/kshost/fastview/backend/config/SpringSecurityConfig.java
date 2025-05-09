@@ -48,6 +48,12 @@ public class SpringSecurityConfig {
                         .requestMatchers("/webjars/**").permitAll() // 放行 Swagger 所需的 WebJars 资源
                         .requestMatchers("/v3/api-docs").permitAll() // 放行 OpenAPI 文档路径
                         .requestMatchers("/v3/api-docs/**").permitAll() // 放行 OpenAPI 文档的子路径
+                        .requestMatchers("/swagger-resources/**").permitAll()
+                        .requestMatchers("//knife4j/**").permitAll()
+
+
+
+
 
                         .anyRequest().authenticated()); //其它路径都需要认证
         //自定义token过滤器注册

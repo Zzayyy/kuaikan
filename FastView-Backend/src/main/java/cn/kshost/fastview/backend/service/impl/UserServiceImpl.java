@@ -203,11 +203,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             }
         }
         throw  new DataException(FastViewEnum.DATA_ERROR);
+    }
 
-
-
-
-
-
+    @Override
+    public User getSysUserById(Integer id) {
+        LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<User>().eq(User::getId, id).eq(User::getIsDelete, 0);
+        return userMapper.selectOne(wrapper);
     }
 }

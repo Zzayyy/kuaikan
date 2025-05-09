@@ -1,5 +1,6 @@
 package cn.kshost.fastview.backend.config;
 
+
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
@@ -10,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SwaggerConfiguration {
-
     @Bean
     public GroupedOpenApi adminApi() {      // 创建了一个api接口的分组
         return GroupedOpenApi.builder()
@@ -20,6 +20,7 @@ public class SwaggerConfiguration {
     }
     @Bean
     public OpenAPI openAPI(){
+        System.out.println(123123123);
         return new OpenAPI()
                 .info(new Info()
                         .title("FastView-API")

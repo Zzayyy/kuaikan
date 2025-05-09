@@ -1,6 +1,8 @@
 package cn.kshost.fastview.backend.service;
 
+import cn.kshost.fastview.backend.pojo.dto.RoleQueryDto;
 import cn.kshost.fastview.backend.pojo.po.Role;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +15,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRoleService extends IService<Role> {
 
+    void addSysRole(Role role);
+
+    Role getSysRoleById(Integer id);
+
+    Page<Role> getRoleListPage(RoleQueryDto roleQueryDto);
 }

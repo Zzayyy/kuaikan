@@ -4,7 +4,7 @@ server:
 spring:
   data:
     redis:
-      host: nwct.kshost.cn
+      host: localhost
       database: 0
       port: 6379
   application:
@@ -15,11 +15,8 @@ spring:
     url: jdbc:mysql://nwct.kshost.cn:3306/db_FastView?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: Qq2548706536@
-  cloud:
-    nacos:
-      discovery:
-        server-addr: nwct.kshost.cn:8848
 mybatis:
   mapper-locations: classpath:/mapper/*/*.xml
   config-location: classpath:/mybatis-config.xml
+
 
