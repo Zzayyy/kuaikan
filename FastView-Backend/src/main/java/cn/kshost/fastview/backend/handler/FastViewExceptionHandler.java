@@ -26,6 +26,7 @@ public class FastViewExceptionHandler  {
         return Result.error(500,e.getMessage());
     }
 
+
     /**
      * 数据异常
      */
