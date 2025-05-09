@@ -47,8 +47,9 @@ public class UserController {
     public Result getAsyncRoutes(HttpServletRequest request) {
         //获取用户信息
         LoginUserDetail loginUserDetail = FastViewContextUtil.getLoginUserDetail();
+        //获取路由树
         List<MenuItem> menuItemList  =  userService.getMenuItemList(loginUserDetail);
-        return Result.success("success", menuItemList);
+        return Result.success(FastViewEnum.QUERY_SUCCESS, menuItemList);
     }
 
     @Operation(summary ="刷新token")
