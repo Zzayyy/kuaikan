@@ -82,7 +82,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
                     build();
             return loginUserVo;
         }
-       throw  new LoginException(FastViewEnum.USERNAME_PASSWORD_ERROR);
+       throw new LoginException(FastViewEnum.USERNAME_PASSWORD_ERROR);
     }
 
     @Override

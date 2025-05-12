@@ -1,6 +1,9 @@
 package cn.kshost.fastview.backend.service;
 import cn.kshost.fastview.backend.pojo.po.Menu;
+import cn.kshost.fastview.backend.pojo.result.Result;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IMenuService extends IService<Menu> {
 
+    List<Menu> getChildren(Long parentId);
 }
