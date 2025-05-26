@@ -20,7 +20,7 @@ public class SwaggerConfiguration {
     }
     @Bean
     public OpenAPI openAPI(){
-        System.out.println(123123123);
+
         return new OpenAPI()
                 .info(new Info()
                         .title("FastView-API")
