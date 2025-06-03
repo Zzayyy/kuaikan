@@ -30,10 +30,11 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/user")
-@Tag(name = "用户接口")
+@Tag(name = "用户管理")
 public class UserController {
     @Autowired
     private IUserService userService;
+
     @Operation(summary = "用户登录")
     @PostMapping("/login")
     public Result login(@RequestBody User user) {
@@ -72,6 +73,7 @@ public class UserController {
         userService.modifySysUserById(user);
         return   Result.success(FastViewEnum.MODIFY_SUCCESS);
     }
+
     @Operation(summary = "分页查询系统用户")
     @PostMapping("/getAllSysUsers")
     public Result getAllSysUsers(@RequestBody UserQueryDto userQueryDto) {
@@ -85,6 +87,7 @@ public class UserController {
         userService.deleteByIds(ids);
         return Result.success(FastViewEnum.DELETE_SUCCESS);
     }
+
     @Operation(summary = "添加系统用户")
     @PostMapping("/addSysUser")
     public Result addSysUser(@RequestBody User user) {
@@ -92,22 +95,7 @@ public class UserController {
         return Result.success(FastViewEnum.ADD_SUCCESS);
     }
 
-    @Operation(summary = "根据用户id获取角色id列表")
-    @GetMapping("/getRoleIdsByUserId")
-    public Result getRoleIdsByUserId(@Parameter(description = "用户id") @RequestParam(value = "userId") Long userId) {
-        List<Long> roleIds =  userService.getRoleIdsByUserId(userId);
-        return Result.success(FastViewEnum.QUERY_SUCCESS,roleIds);
-    }
 
-    /**
-     * description = "不论是新增的角色还是减少都用这个接口，将用户id和最终的角色id列表传入就行"
-     * @param userRoleIdsDto
-     * @return
-     */
-    @Operation(summary = "给用户设置角色列表")
-    @PostMapping("/modifyUserRole")
-    public Result modifyUserRole(@RequestBody @Parameter(description = "传入用户id和角色id列表") UserRoleIdsDto userRoleIdsDto ) {
-        userService.modifyUserRole(userRoleIdsDto);
-        return Result.success(FastViewEnum.MODIFY_SUCCESS);
-    }
+
+
 }

@@ -7,8 +7,12 @@ import cn.kshost.fastview.backend.pojo.result.Result;
 import cn.kshost.fastview.backend.service.IRoleService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.swing.plaf.SeparatorUI;
+import java.util.List;
 
 /**
  * <p>
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
  * @author 杨文胜
  * @since 2025-04-15
  */
+@Tag(name = "角色管理")
 @RestController
 @RequestMapping("/role")
 public class RoleController {
@@ -49,4 +54,14 @@ public class RoleController {
         Page<Role>  rolePage = roleService.getRoleListPage(roleQueryDto);
         return Result.success(FastViewEnum.QUERY_SUCCESS, rolePage);
     }
+    @Operation(summary = "根据列表删除角色")
+    @PostMapping("/remveRoles")
+    public Result remveRoles(@RequestBody List<Integer> ids) {
+        roleService.removeByIds(ids);
+        return Result.success(FastViewEnum.DELETE_SUCCESS);
+    }
+
+
+
+
 }
