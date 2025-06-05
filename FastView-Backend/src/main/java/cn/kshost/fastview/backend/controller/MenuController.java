@@ -6,12 +6,15 @@ import cn.kshost.fastview.backend.pojo.po.MenuItem;
 import cn.kshost.fastview.backend.pojo.result.Result;
 import cn.kshost.fastview.backend.service.IMenuService;
 import cn.kshost.fastview.backend.util.MenuUtil;
+import com.alibaba.fastjson2.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -54,11 +57,33 @@ public class MenuController {
     /**
      * 获取所有菜单列表
      */
+    @Operation(summary = "获取所有菜单树")
     @GetMapping("/list")
     public Result<List<MenuItem>> listMenus() {
-        List<Menu> list = menuService.list(menuService.lambdaQuery()
-                .eq(Menu::getIsDelete, 0)
-                .orderByAsc(Menu::getOrderNum));
+
+        LambdaQueryWrapper<Menu> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(Menu::getIsDelete, 0)
+                .orderByAsc(Menu::getOrderNum);
+        List<Menu> list = menuService.list(wrapper);
+
+        //构建菜单树
+        List<MenuItem> menuItems = MenuUtil.buildMenuTree(list);
+        return Result.success(FastViewEnum.QUERY_SUCCESS,menuItems);
+    }
+
+    /**
+     * 获取所有菜单列表
+     */
+    @Operation(summary = "获取所有启用菜单树 status=1")
+    @GetMapping("/listActivityMenus")
+    public Result<List<MenuItem>> listActivityMenus() {
+
+        LambdaQueryWrapper<Menu> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(Menu::getIsDelete, 0)
+                .eq(Menu::getStatus, 1)
+                .orderByAsc(Menu::getOrderNum);
+        List<Menu> list = menuService.list(wrapper);
+
         //构建菜单树
         List<MenuItem> menuItems = MenuUtil.buildMenuTree(list);
         return Result.success(FastViewEnum.QUERY_SUCCESS,menuItems);
@@ -72,6 +97,11 @@ public class MenuController {
     public Result<String> addMenu(@RequestBody Menu menu) {
         menu.setCreateTime(LocalDateTime.now());
         menu.setUpdateTime(LocalDateTime.now());
+        HashMap<String, String> meta = new HashMap<>();
+        meta.put("showParent", "true");
+        meta.put("title", menu.getMeta());
+
+        menu.setMeta(JSON.toJSONString(meta));
         menu.setIsDelete((byte) 0);
         boolean result = menuService.save(menu);
         return result ? Result.success(FastViewEnum.ADD_SUCCESS) : Result.error(FastViewEnum.ADD_ERROR);
@@ -85,6 +115,13 @@ public class MenuController {
     public Result modifyMenuById(@RequestBody Menu menu) {
         menu.setUpdateTime(LocalDateTime.now());
         menu.setIsDelete((byte) 0);
+        //构建meta
+        HashMap<String, String> meta = new HashMap<>();
+        meta.put("showParent", "true");
+        meta.put("title", menu.getMeta());
+
+        menu.setMeta(JSON.toJSONString(meta));
+
         menuService.updateById(menu);
         return Result.success(FastViewEnum.MODIFY_SUCCESS);
     }
@@ -92,10 +129,10 @@ public class MenuController {
     /**
      * 删除菜单
      */
-    @Operation(summary = "根据id删除菜单")
-    @PostMapping("/removeMenuById/{id}")
-    public Result removeMenuById(Integer id){
-       menuService.removeById(id);
+    @Operation(summary = "根据菜单id列表删除菜单")
+    @PostMapping("/removeMenuByIds")
+    public Result removeMenuById(@RequestBody List<Long> ids){
+       menuService.removeByIds(ids);
        return Result.success(FastViewEnum.DELETE_SUCCESS);
     }
 

@@ -20,4 +20,6 @@ public interface IRoleService extends IService<Role> {
     Role getSysRoleById(Integer id);
 
     Page<Role> getRoleListPage(RoleQueryDto roleQueryDto);
+
+    void modifyRole(Role role);
 }

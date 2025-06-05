@@ -61,6 +61,13 @@ public class RoleController {
         return Result.success(FastViewEnum.DELETE_SUCCESS);
     }
 
+    @Operation(summary = "修改角色")
+    @PostMapping("/modifyRole")
+    public Result modifyRole(@RequestBody Role role) {
+        roleService.modifyRole(role);
+        return Result.success(FastViewEnum.MODIFY_SUCCESS);
+    }
+
 
 
 

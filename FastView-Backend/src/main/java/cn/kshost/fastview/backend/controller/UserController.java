@@ -69,7 +69,7 @@ public class UserController {
 
     @Operation(summary = "根据用户id修改用户")
     @PostMapping("/modifySysUserById")
-    public Result modifySysUserById(User user) {
+    public Result modifySysUserById(@RequestBody User user) {
         userService.modifySysUserById(user);
         return   Result.success(FastViewEnum.MODIFY_SUCCESS);
     }

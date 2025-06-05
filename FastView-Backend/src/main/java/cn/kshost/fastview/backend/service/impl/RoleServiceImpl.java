@@ -32,7 +32,6 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
         if (Objects.nonNull(role)) {
             //判断逻辑为空
             role.setIsDelete(0);
-            role.setStatus(1);
             role.setCreateTime(LocalDateTime.now());
             role.setCreateTime(LocalDateTime.now());
             roleMapper.insert(role);
@@ -62,6 +61,14 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
         Page<Role> rolePage = new Page<>(roleQueryDto.getPageNum(), roleQueryDto.getPageSize());
         roleMapper.selectPage(rolePage, wrapper);
         return  rolePage;
+
+    }
+
+    @Override
+    public void modifyRole(Role role) {
+        LambdaQueryWrapper<Role> wrapper = new LambdaQueryWrapper<>();
+        role.setUpdateTime(LocalDateTime.now());
+        roleMapper.updateById(role);
 
     }
 }

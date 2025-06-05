@@ -1,6 +1,9 @@
 package cn.kshost.fastview.backend.service;
+import cn.kshost.fastview.backend.pojo.dto.RoleMenuIdsDto;
 import cn.kshost.fastview.backend.pojo.po.RoleMenu;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,4 +15,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRoleMenuService extends IService<RoleMenu> {
 
+    List<Long> getMenuIdsByRoleId(Integer roleId);
+
+    void modifyRoleMenuByRoleId(RoleMenuIdsDto roleMenuIdsDto);
 }
