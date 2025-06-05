@@ -19,3 +19,10 @@ mybatis:
   mapper-locations: classpath:/mapper/*/*.xml
   config-location: classpath:/mybatis-config.xml
 
+#minio基础配置
+fastview:
+  minio:
+    endpoint: http://nwct.kshost.cn:9001
+    access-key: admin
+    secret-key: Qq2548706536@
+    bucket: zqyg-bucket

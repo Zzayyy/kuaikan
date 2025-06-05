@@ -1,4 +1,4 @@
-package cn.kshost.fastview.backend.controller;
+package cn.kshost.fastview.backend.controller.video;
 
 import cn.kshost.fastview.backend.emus.FastViewEnum;
 import cn.kshost.fastview.backend.pojo.dto.VideoQueryDto;
@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -31,12 +32,13 @@ public class VideoController {
 
     /**
      * 添加视频
+     *
      * @param video 视频id
      * @return 添加结果
      */
     @Operation(summary = "添加视频")
     @PostMapping
-    public Result<String> addVideo(@RequestBody Video video){
+    public Result<String> addVideo(@RequestBody Video video) {
         video.setCreateTime(LocalDateTime.now());
         video.setUpdateTime(LocalDateTime.now());
         boolean result = videoService.save(video);
@@ -45,48 +47,67 @@ public class VideoController {
 
     /**
      * 根据id获取视频信息
+     *
      * @param id 视频id
      * @return 视频信息
      */
     @Operation(summary = "根据id获取视频信息")
     @GetMapping("/{id}")
-    public Result<Video> getVideoById(@PathVariable Long id){
+    public Result<Video> getVideoById(@PathVariable Long id) {
         Video video = videoService.getById(id);
-        return video != null ? Result.success(FastViewEnum.QUERY_SUCCESS,video) : Result.error(FastViewEnum.QUERY_ERROR);
+        return video != null ? Result.success(FastViewEnum.QUERY_SUCCESS, video) : Result.error(FastViewEnum.QUERY_ERROR);
     }
 
     /**
      * 分页查询视频信息
+     *
      * @return 视频分页信息
      */
-    @Operation(summary = "分页查询视频信息")
+
     @PostMapping("/page")
-    public Result<Page<Video>> getVideoByPage(@RequestBody VideoQueryDto videoQueryDto){
+    @Operation(summary = "分页查询视频信息")
+    public Result getVideoByPage(@RequestBody VideoQueryDto videoQueryDto) {
+
         Page<Video> videoPageInfo = videoService.getVideoPage(videoQueryDto);
-        return Result.success(FastViewEnum.QUERY_SUCCESS,videoPageInfo);
+        return Result.success(FastViewEnum.QUERY_SUCCESS, videoPageInfo);
     }
 
     /**
      * 根据id删除视频信息
+     *
      * @param id 视频id
      * @return 删除结果
      */
     @Operation(summary = "根据id删除视频信息")
     @DeleteMapping("/{id}")
-    public Result<String> deleteVideoById(@PathVariable Long id){
+    public Result<String> deleteVideoById(@PathVariable Long id) {
         boolean result = videoService.removeVideoWithTags(id);
         return result ? Result.success(FastViewEnum.DELETE_SUCCESS) : Result.error(FastViewEnum.DELETE_ERROR);
     }
 
+
+    /**
+     * 根据id列表删除视频信息
+     * @param ids
+     * @return
+     */
+    @Operation(summary = "根据id列表删除视频信息")
+    @PostMapping("/deleteByIds")
+    public Result<String> deleteVideoById(@RequestBody List<Long> ids) {
+        videoService.removeByIds(ids);
+        return Result.success(FastViewEnum.DELETE_SUCCESS);
+    }
+
     /**
      * 根据id修改视频信息
-     * @param id 视频id
+     *
+     * @param id    视频id
      * @param video 视频信息
      * @return 修改结果
      */
     @Operation(summary = "根据id修改视频信息")
     @PutMapping("{id}")
-    public Result<String> updateVideoById(@PathVariable Long id, @RequestBody Video video){
+    public Result<String> updateVideoById(@PathVariable Long id, @RequestBody Video video) {
         video.setId(id);
         boolean result = videoService.updateById(video);
         return result ? Result.success(FastViewEnum.MODIFY_SUCCESS) : Result.error(FastViewEnum.MODIFY_ERROR);

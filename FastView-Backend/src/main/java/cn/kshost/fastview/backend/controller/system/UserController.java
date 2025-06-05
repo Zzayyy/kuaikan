@@ -1,8 +1,7 @@
-package cn.kshost.fastview.backend.controller;
+package cn.kshost.fastview.backend.controller.system;
 
 import cn.kshost.fastview.backend.emus.FastViewEnum;
 import cn.kshost.fastview.backend.pojo.dto.UserQueryDto;
-import cn.kshost.fastview.backend.pojo.dto.UserRoleIdsDto;
 import cn.kshost.fastview.backend.pojo.po.MenuItem;
 import cn.kshost.fastview.backend.pojo.po.User;
 import cn.kshost.fastview.backend.pojo.result.Result;
@@ -13,7 +12,6 @@ import cn.kshost.fastview.backend.util.FastViewContextUtil;
 import cn.kshost.fastview.backend.util.TokenUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package cn.kshost.fastview.backend.controller;
+package cn.kshost.fastview.backend.controller.system;
 
 import cn.kshost.fastview.backend.emus.FastViewEnum;
 import cn.kshost.fastview.backend.pojo.dto.UserRoleIdsDto;

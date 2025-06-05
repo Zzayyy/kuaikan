@@ -99,7 +99,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         //组装菜单id 并去重
         List<Long> menuIdList = roleMenuList.stream().map(RoleMenu::getMenuId).distinct().collect(Collectors.toList());
         //获取菜单信息
-        List<Menu> menuList = menuMapper.selectList(new LambdaQueryWrapper<Menu>().in(Menu::getId, menuIdList).eq(Menu::getStatus, 1).eq(Menu::getIsDelete, 0));
+        List<Menu> menuList = menuMapper.selectList(new LambdaQueryWrapper<Menu>().in(Menu::getId, menuIdList).eq(Menu::getStatus, 1).eq(Menu::getIsDelete, 0).orderByAsc(Menu::getOrderNum));
         List<MenuItem> menuItemList = MenuUtil.buildMenuTree(menuList);
         return menuItemList;
     }

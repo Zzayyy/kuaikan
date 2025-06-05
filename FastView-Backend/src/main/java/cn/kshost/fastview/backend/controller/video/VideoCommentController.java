@@ -1,4 +1,4 @@
-package cn.kshost.fastview.backend.controller;
+package cn.kshost.fastview.backend.controller.video;
 
 
 import cn.kshost.fastview.backend.emus.FastViewEnum;

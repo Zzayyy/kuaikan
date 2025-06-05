@@ -1,4 +1,4 @@
-package cn.kshost.fastview.backend.controller;
+package cn.kshost.fastview.backend.controller.system;
 
 import cn.kshost.fastview.backend.emus.FastViewEnum;
 import cn.kshost.fastview.backend.pojo.dto.RoleQueryDto;
@@ -11,7 +11,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.plaf.SeparatorUI;
 import java.util.List;
 
 /**

@@ -1,8 +1,7 @@
-package cn.kshost.fastview.backend.controller;
+package cn.kshost.fastview.backend.controller.system;
 
 import cn.kshost.fastview.backend.emus.FastViewEnum;
 import cn.kshost.fastview.backend.pojo.dto.RoleMenuIdsDto;
-import cn.kshost.fastview.backend.pojo.po.RoleMenu;
 import cn.kshost.fastview.backend.pojo.result.Result;
 import cn.kshost.fastview.backend.service.IRoleMenuService;
 import io.swagger.v3.oas.annotations.Operation;
