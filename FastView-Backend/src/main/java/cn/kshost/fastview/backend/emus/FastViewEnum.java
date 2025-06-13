@@ -15,6 +15,7 @@ public enum FastViewEnum {
     TOKEN_REFRESH_SUCCESS(200,"Token修改成功"),
     LIKE_SUCCESS(200,"点赞成功"),
     REPLY_SUCCESS(200,"点赞成功"),
+    UPLOAD_SUCCESS(200,"上传成功"),
 
 
     /**
@@ -29,6 +30,7 @@ public enum FastViewEnum {
     TOKEN_REFRESH_ERROR(412,"Token刷新失败"),
     LIKE_ERROR(401,"点赞失败"),
     REPLY_ERROR(401,"点赞失败"),
+    UPLOAD_ERROR(401,"上传失败"),
     ;
 
 
